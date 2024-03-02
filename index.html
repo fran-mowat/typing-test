@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Typing Speed Test</h1>
+    </header>
+    
+    <main>
+        <div id="test-details">
+            <form action="#" method="post">
+                <select name="text" id="text-choice">
+                    <option value="text1" selected>Text 1</option>
+                    <option value="text2">Text 2</option>
+                    <option value="text3">Text 3</option>
+                </select>
+
+                <select name="duration" id="duration">
+                    <option value="00:30">30 seconds</option>
+                    <option value="01:00" selected>1 minute</option>
+                    <option value="02:00">2 minutes</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="test-progress">
+            <progress value="40" max="100"></progress>
+            <span id="clock">01:00</span>
+        </div>
+
+        <div id="test-content">
+        </div>
+    </main>
+</body>
+</html>
