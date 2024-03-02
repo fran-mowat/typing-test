@@ -1,0 +1,28 @@
+:root{
+    --primary-colour: #fff;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-colour);
+    margin: 30px;
+}
+
+header h1{
+    text-align: center;
+}
+
+#test-details form select{
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+#test-progress progress{
+    width: 70%;
+}
+
+#test-content{
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
