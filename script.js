@@ -16,6 +16,8 @@ let setTimer = () => {
     clock.innerHTML = `0${set_minutes}:${set_seconds}`;
 
     clock.startTime = new Date().getTime();
+
+    clearInterval(clock.interval_ID);
     let interval_ID = setInterval(countdown, 100);
     clock.interval_ID = interval_ID;
 }
