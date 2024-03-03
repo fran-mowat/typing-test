@@ -43,3 +43,24 @@ let countdown = () => {
     }
 }
 
+
+let changeText = () => {
+    let text_display = document.getElementById("reference-text");
+
+    switch (selected_text.value){
+        case "text1":
+            text_display.innerHTML = "text 1"; 
+            break;
+        case "text2":
+            text_display.innerHTML = "text 2"; 
+            break;
+        case "text3":
+            text_display.innerHTML = "text 3"; 
+            break;
+        default: 
+            text_display.innerHTML = "Error on selection";
+    }
+}
+
+let selected_text = document.getElementById("text-choice");
+selected_text.addEventListener("change", changeText);
