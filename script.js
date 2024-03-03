@@ -18,6 +18,9 @@ let setTimer = () => {
     test_area.addEventListener("input", startTimer);
 
     test_area.value = "";
+
+    let progress_bar = document.getElementById("progress-bar");
+    progress_bar.classList = "";
 }
 
 let duration = document.getElementById("duration");
@@ -94,6 +97,21 @@ let startTimer = () => {
     clearInterval(clock.interval_ID);
     let interval_ID = setInterval(countdown, 100);
     clock.interval_ID = interval_ID;
+
+    let progress_bar = document.getElementById("progress-bar");
+    switch (clock.innerHTML){
+        case "00:30":
+            progress_bar.classList = "progress_30s";
+            break;
+        case "01:00":
+            progress_bar.classList = "progress_60s";
+            break;
+        case "02:00":
+            progress_bar.classList = "progress_120s";
+            break;
+        default:
+            console.log("Error setting class of progress bar");
+    }
 }
 
 let checkValue = () => {
