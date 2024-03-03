@@ -21,8 +21,11 @@ header h1{
     width: 70%;
 }
 
-#test-content{
+#test-content textarea{
     height: 100px;
+    width: 900px;
     border: 1px solid black;
     border-radius: 5px;
+    resize: none;
+    overflow: hidden;
 }
