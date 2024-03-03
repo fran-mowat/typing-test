@@ -22,7 +22,7 @@ main{
     padding: 3px 5px;
 }
 
-#test-progress #progress-bar{
+#progress-bar{
     display: inline-block;
     width: 70%;
     height: 10px;
@@ -32,9 +32,19 @@ main{
     background-image: linear-gradient(90deg, #ee4 0%, #ee4 50%, #222 50%, #222 100%);
 }
 
-#test-progress #progress-bar:hover{
+#test-progress .progress_30s{
+    background-position: left; 
+    transition: background-position 30s;
+}
+
+#test-progress .progress_60s{
     background-position: left;
-    transition: background-position 0.5s;
+    transition: background-position 60s;
+}
+
+#test-progress .progress_120s{
+    background-position: left;
+    transition: background-position 120s;
 }
 
 #test-content #reference-text{
