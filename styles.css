@@ -12,6 +12,11 @@ header h1{
     text-align: center;
 }
 
+main{
+    margin: auto;
+    width: 900px;
+}
+
 #test-details form select{
     border-radius: 5px;
     padding: 3px 5px;
@@ -19,6 +24,10 @@ header h1{
 
 #test-progress progress{
     width: 70%;
+}
+
+#test-content #reference-text{
+    padding: 5px;
 }
 
 #test-content textarea{
