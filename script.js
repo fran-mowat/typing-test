@@ -26,14 +26,13 @@ let duration = document.getElementById("duration");
 duration.addEventListener("change", setTimer);
 
 let countdown = () => {
-    console.log("chec");
     let now = new Date().getTime();
     let difference = now - clock.startTime;
     if (difference > duration.value * 1000){
         clearInterval(clock.interval_ID);
         clock.innerHTML = "00:00";
     } else {
-        let seconds_passed = Math.floor((difference % (1000 * 60)) / (1000));
+        let seconds_passed = Math.floor((difference % (1000 * 60 * 60)) / (1000));
         let seconds_remaining = duration.value - seconds_passed;
 
         let duration_remaining = secondsToMinutes(seconds_remaining);
