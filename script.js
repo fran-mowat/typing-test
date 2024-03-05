@@ -128,7 +128,7 @@ let startTimer = () => {
 
 let validateInput = () => {
     test_area.errors = 0;
-    characters_typed++;
+    total_characters_typed++;
     
     let current_input = test_area.value;
     const current_input_arr = current_input.split("");
@@ -145,9 +145,12 @@ let validateInput = () => {
         }
     }
 
+    test_area.current_characters = current_input.length;
+
     if (current_input.length === sentence.length){
         incrementText();
         test_area.total_errors += test_area.errors; 
+        test_area.characters_typed += test_area.current_characters;
     }
 }
 
@@ -156,20 +159,32 @@ let displayResults = () => {
     result_display.style.display = "block";
 
     let errors = 0;
+    let characters = 0; 
+
     if (test_area.value.length != 0){
         errors = test_area.total_errors + test_area.errors;
+        characters = test_area.characters_typed + test_area.current_characters;
     } else {
         errors = test_area.total_errors;
+        characters = test_area.characters_typed;
     }
 
-    let correct_characters = characters_typed - errors;
-    let accuracy = Math.floor((correct_characters / characters_typed) * 100);
+    let correct_characters = total_characters_typed - errors;
+    let accuracy = Math.floor((correct_characters / total_characters_typed) * 100);
     
     let accuracy_div = document.getElementById("accuracy");
     let accuracy_display = accuracy_div.children[1];
     accuracy_display.innerHTML = accuracy + "%";
     
+    let minutes = duration.value / 60;
+
     let wpm_div = document.getElementById("wpm");
+    let wpm_display = wpm_div.children[1];
+
+    let cpm_div = document.getElementById("cpm");
+    let cpm_display = cpm_div.children[1];
+    let cpm = Math.floor(characters / minutes); 
+    cpm_display.innerHTML = cpm;
 }
 
 let selected_text = document.getElementById("text-choice");
@@ -182,6 +197,8 @@ test_area.addEventListener("input", startTimer);
 
 setText(text_1984[0]);
 
-let characters_typed = 0; 
+let total_characters_typed = 0;
+
 test_area.total_errors = 0;
+test_area.characters_typed = 0;
 test_area.addEventListener("input", validateInput);
