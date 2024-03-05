@@ -50,18 +50,28 @@ let text_wizard_of_oz = ["Dorothy lived in the midst of the great Kansas prairie
 let text_display = document.getElementById("reference-text");
 text_display.text_index = 0;
 
+let setText = (sentence) => {
+    text_display.textContent = "";
+
+    sentence.split("").forEach(char => {
+        let char_span = document.createElement("span");
+        char_span.innerHTML = char;
+        text_display.appendChild(char_span);
+    })
+}
+
 let changeText = () => {
     text_display.text_index = 0;
 
     switch (selected_text.value){
         case "1":
-            text_display.innerHTML = text_1984[0]; 
+            setText(text_1984[0]);
             break;
         case "2":
-            text_display.innerHTML = text_oliver_twist[0]; 
+            setText(text_oliver_twist[0]); 
             break;
         case "3":
-            text_display.innerHTML = text_wizard_of_oz[0]; 
+            setText(text_wizard_of_oz[0]);
             break;
         default: 
             text_display.innerHTML = "Error on selection";
@@ -75,13 +85,13 @@ let incrementText = () => {
 
     switch (selected_text.value){
         case "1":
-            text_display.innerHTML = text_1984[text_display.text_index]; 
+            setText(text_1984[text_display.text_index]);
             break;
         case "2":
-            text_display.innerHTML = text_oliver_twist[text_display.text_index]; 
+            setText(text_oliver_twist[text_display.text_index]); 
             break;
         case "3":
-            text_display.innerHTML = text_wizard_of_oz[text_display.text_index]; 
+            setText(text_wizard_of_oz[text_display.text_index]);
             break;
         default: 
             text_display.innerHTML = "Error on selection";
@@ -128,3 +138,5 @@ duration.addEventListener("change", changeText);
 let test_area = document.getElementById("test-area");
 test_area.addEventListener("input", startTimer);
 test_area.addEventListener("input", checkValue);
+
+setText(text_1984[0]);
