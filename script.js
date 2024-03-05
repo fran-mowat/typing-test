@@ -33,6 +33,7 @@ let countdown = () => {
         clearInterval(clock.interval_ID);
         clock.innerHTML = "00:00";
         test_area.setAttribute("disabled", "true");
+        displayResults();
     } else {
         let seconds_passed = Math.floor((difference % (1000 * 60 * 60)) / (1000));
         let seconds_remaining = duration.value - seconds_passed;
@@ -148,6 +149,11 @@ let validateInput = () => {
         incrementText();
         test_area.total_errors += test_area.errors; 
     }
+}
+
+let displayResults = () => {
+    let result_display = document.getElementById("display-results");
+    result_display.style.display = "block";
 }
 
 let selected_text = document.getElementById("text-choice");
