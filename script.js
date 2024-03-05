@@ -111,14 +111,14 @@ let startTimer = () => {
     clock.interval_ID = interval_ID;
 
     let progress_bar = document.getElementById("progress-bar");
-    switch (clock.innerHTML){
-        case "00:30":
+    switch (duration.value){
+        case "30":
             progress_bar.classList = "progress_30s";
             break;
-        case "01:00":
+        case "60":
             progress_bar.classList = "progress_60s";
             break;
-        case "02:00":
+        case "120":
             progress_bar.classList = "progress_120s";
             break;
         default:
@@ -210,3 +210,30 @@ test_area.total_errors = 0;
 test_area.characters_typed = 0;
 test_area.total_words = 0;
 test_area.addEventListener("input", validateInput);
+
+let resetToStart = () => {
+    let result_display = document.getElementById("display-results");
+    result_display.style.display = "none";
+
+    test_area.value = "";
+    test_area.removeAttribute("disabled");
+
+    setText(text_1984[0]);
+
+    let progress_bar = document.getElementById("progress-bar");
+    progress_bar.classList = "";
+
+    test_area.addEventListener("input", startTimer);
+    test_area.addEventListener("input", validateInput);
+
+    total_characters_typed = 0;
+
+    test_area.total_errors = 0;
+    test_area.characters_typed = 0;
+    test_area.total_words = 0;
+
+    text_display.text_index = 0;
+}
+
+let retry = document.getElementById("retry");
+retry.addEventListener("click", resetToStart);
