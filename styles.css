@@ -1,8 +1,8 @@
 :root{
     --primary-colour: #e3dede;
     --highlight: #61cefd;
-    --grey: #929191;
-    --green: rgb(47, 168, 47);
+    --grey: #8a8888;
+    --green: rgb(39, 137, 39);
     --red: rgb(223, 40, 40);
 }
 
@@ -53,6 +53,7 @@ main{
 
 #test-content #reference-text{
     padding: 5px;
+    font-size: 18px;
 }
 
 #test-content .correct_char{
@@ -70,6 +71,10 @@ main{
     border-radius: 5px;
     resize: none;
     overflow: hidden;
+}
+
+#test-content textarea:disabled{
+    background-color: #e3dede;
 }
 
 #display-results div{
