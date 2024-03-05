@@ -1,9 +1,10 @@
 :root{
-    --primary-colour: #e3dede;
+    --primary-colour: #eff6ff;
     --highlight: #61cefd;
     --grey: #8a8888;
     --green: rgb(39, 137, 39);
     --red: rgb(223, 40, 40);
+    --light-grey: #f2f2f2;
 }
 
 body{
@@ -74,7 +75,7 @@ main{
 }
 
 #test-content textarea:disabled{
-    background-color: #e3dede;
+    background-color: var(--light-grey);
 }
 
 #display-results div{
@@ -93,11 +94,6 @@ main{
     margin: 5px 15px;
 }
 
-#display-results div div:hover{
-    transform: translateY(-3px);
-    box-shadow: 5px 5px 3px var(--grey);
-}
-
 #display-results div div p{
     font-size: 18px;
     margin: 10px auto;
@@ -112,4 +108,13 @@ main{
     margin: auto;
     font-size: 19px;
     padding: 10px;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#display-results input:hover{
+    background-color: #e6e6e6;
+    transform: translateY(-1px);
+    box-shadow: 5px 5px 3px var(--grey);
 }
