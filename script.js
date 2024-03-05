@@ -146,7 +146,7 @@ let validateInput = () => {
     }
 
     test_area.current_characters = current_input.length;
-    test_area.current_words = current_input.split(" ").length;
+    test_area.current_words = current_input.split(" ").length - 1;
 
     if (current_input.length === sentence.length){
         incrementText();
