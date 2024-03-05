@@ -67,3 +67,33 @@ main{
     resize: none;
     overflow: hidden;
 }
+
+#display-results div{
+    margin: 10px auto;
+    width: max-content;
+}
+
+#display-results div div{
+    height: 100px; 
+    width: 130px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #ee4;
+    text-align: center;
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+#display-results div div p{
+    font-size: 18px;
+    margin: 10px auto;
+}
+
+#display-results div div p:nth-of-type(2){
+    font-size: 28px;
+}
+
+#display-results input{
+    display: block;
+    margin: auto;
+}
