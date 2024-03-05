@@ -78,6 +78,10 @@ main{
     background-color: var(--light-grey);
 }
 
+#display-results{
+    display: none;
+}
+
 #display-results div{
     margin: 10px auto;
     width: max-content;
