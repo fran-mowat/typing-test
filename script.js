@@ -155,16 +155,14 @@ let displayResults = () => {
     let result_display = document.getElementById("display-results");
     result_display.style.display = "block";
 
-    let error_div = document.getElementById("errors");
-    let error_count = error_div.children[1];
-
+    let errors = 0;
     if (test_area.value.length != 0){
-        error_count.innerHTML = test_area.total_errors + test_area.errors;
+        errors = test_area.total_errors + test_area.errors;
     } else {
-        error_count.innerHTML = test_area.total_errors;
+        errors = test_area.total_errors;
     }
 
-    let correct_characters = characters_typed - error_count.innerHTML;
+    let correct_characters = characters_typed - errors;
     let accuracy = Math.floor((correct_characters / characters_typed) * 100);
     
     let accuracy_div = document.getElementById("accuracy");
