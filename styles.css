@@ -51,6 +51,14 @@ main{
     padding: 5px;
 }
 
+#test-content .correct_char{
+    color: green;
+}
+
+#test-content .incorrect_char{
+    color: red;
+}
+
 #test-content textarea{
     height: 100px;
     width: 900px;
