@@ -1,5 +1,9 @@
 :root{
-    --primary-colour: #fff;
+    --primary-colour: #e3dede;
+    --highlight: #61cefd;
+    --grey: #929191;
+    --green: rgb(47, 168, 47);
+    --red: rgb(223, 40, 40);
 }
 
 body{
@@ -29,7 +33,7 @@ main{
     border-radius: 3px;
     background-position: right;
     background-size: 200%;
-    background-image: linear-gradient(90deg, #ee4 0%, #ee4 50%, #222 50%, #222 100%);
+    background-image: linear-gradient(90deg, var(--highlight) 0%, var(--highlight) 50%, var(--grey) 50%, var(--grey) 100%);
 }
 
 #test-progress .progress_30s{
@@ -52,11 +56,11 @@ main{
 }
 
 #test-content .correct_char{
-    color: green;
+    color: var(--green);
 }
 
 #test-content .incorrect_char{
-    color: red;
+    color: var(--red);
 }
 
 #test-content textarea{
@@ -78,10 +82,15 @@ main{
     width: 130px;
     border-radius: 5px;
     border: 1px solid black;
-    background-color: #ee4;
+    background-color: var(--highlight);
     text-align: center;
     display: inline-block;
     margin: 5px 15px;
+}
+
+#display-results div div:hover{
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 3px var(--grey);
 }
 
 #display-results div div p{
@@ -96,4 +105,6 @@ main{
 #display-results input{
     display: block;
     margin: auto;
+    font-size: 19px;
+    padding: 10px;
 }
