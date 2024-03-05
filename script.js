@@ -32,6 +32,7 @@ let countdown = () => {
     if (difference > duration.value * 1000){
         clearInterval(clock.interval_ID);
         clock.innerHTML = "00:00";
+        test_area.setAttribute("disabled", "true");
     } else {
         let seconds_passed = Math.floor((difference % (1000 * 60 * 60)) / (1000));
         let seconds_remaining = duration.value - seconds_passed;
