@@ -125,7 +125,7 @@ let startTimer = () => {
 }
 
 let validateInput = () => {
-    let errors = 0;
+    test_area.errors = 0;
     characters_typed++;
     
     let current_input = test_area.value;
@@ -139,13 +139,13 @@ let validateInput = () => {
             sentence[i].classList = "correct_char";
         } else if (sentence[i].innerHTML != current_input_arr[i]){
             sentence[i].classList = "incorrect_char";
-            errors++;
+            test_area.errors++;
         }
     }
 
     if (test_area.value.length === sentence.length){
         incrementText();
-        test_area.total_errors += errors; 
+        test_area.total_errors += test_area.errors; 
     }
 }
 
@@ -157,8 +157,8 @@ duration.addEventListener("change", changeText);
 let test_area = document.getElementById("test-area");
 test_area.addEventListener("input", startTimer);
 
+setText(text_1984[0]);
+
 let characters_typed = 0; 
 test_area.total_errors = 0;
 test_area.addEventListener("input", validateInput);
-
-setText(text_1984[0]);
