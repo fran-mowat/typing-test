@@ -146,11 +146,13 @@ let validateInput = () => {
     }
 
     test_area.current_characters = current_input.length;
+    test_area.current_words = current_input.split(" ").length;
 
     if (current_input.length === sentence.length){
         incrementText();
         test_area.total_errors += test_area.errors; 
         test_area.characters_typed += test_area.current_characters;
+        test_area.total_words += test_area.current_words;
     }
 }
 
@@ -160,13 +162,16 @@ let displayResults = () => {
 
     let errors = 0;
     let characters = 0; 
+    let words = 0;
 
     if (test_area.value.length != 0){
         errors = test_area.total_errors + test_area.errors;
         characters = test_area.characters_typed + test_area.current_characters;
+        words = test_area.total_words + test_area.current_words;
     } else {
         errors = test_area.total_errors;
         characters = test_area.characters_typed;
+        words = test_area.total_words;
     }
 
     let correct_characters = total_characters_typed - errors;
@@ -180,6 +185,8 @@ let displayResults = () => {
 
     let wpm_div = document.getElementById("wpm");
     let wpm_display = wpm_div.children[1];
+    let wpm = Math.floor(words / minutes); 
+    wpm_display.innerHTML = wpm;
 
     let cpm_div = document.getElementById("cpm");
     let cpm_display = cpm_div.children[1];
@@ -201,4 +208,5 @@ let total_characters_typed = 0;
 
 test_area.total_errors = 0;
 test_area.characters_typed = 0;
+test_area.total_words = 0;
 test_area.addEventListener("input", validateInput);
