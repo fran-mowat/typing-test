@@ -163,8 +163,14 @@ let displayResults = () => {
     } else {
         error_count.innerHTML = test_area.total_errors;
     }
+
+    let correct_characters = characters_typed - error_count.innerHTML;
+    let accuracy = Math.floor((correct_characters / characters_typed) * 100);
     
     let accuracy_div = document.getElementById("accuracy");
+    let accuracy_display = accuracy_div.children[1];
+    accuracy_display.innerHTML = accuracy + "%";
+    
     let wpm_div = document.getElementById("wpm");
 }
 
