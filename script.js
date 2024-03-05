@@ -145,7 +145,7 @@ let validateInput = () => {
         }
     }
 
-    if (test_area.value.length === sentence.length){
+    if (current_input.length === sentence.length){
         incrementText();
         test_area.total_errors += test_area.errors; 
     }
@@ -154,6 +154,18 @@ let validateInput = () => {
 let displayResults = () => {
     let result_display = document.getElementById("display-results");
     result_display.style.display = "block";
+
+    let error_div = document.getElementById("errors");
+    let error_count = error_div.children[1];
+
+    if (test_area.value.length != 0){
+        error_count.innerHTML = test_area.total_errors + test_area.errors;
+    } else {
+        error_count.innerHTML = test_area.total_errors;
+    }
+    
+    let accuracy_div = document.getElementById("accuracy");
+    let wpm_div = document.getElementById("wpm");
 }
 
 let selected_text = document.getElementById("text-choice");
