@@ -124,9 +124,28 @@ let startTimer = () => {
     }
 }
 
-let checkValue = () => {
-    if (test_area.value === text_display.innerHTML){
+let validateInput = () => {
+    let errors = 0;
+    characters_typed++;
+    
+    let current_input = test_area.value;
+    const current_input_arr = current_input.split("");
+
+    let sentence = text_display.children;
+    for (let i = 0; i < sentence.length; i++){
+        if (current_input_arr[i] == null){
+            sentence[i].classList = "";
+        } else if (sentence[i].innerHTML == current_input_arr[i]){
+            sentence[i].classList = "correct_char";
+        } else if (sentence[i].innerHTML != current_input_arr[i]){
+            sentence[i].classList = "incorrect_char";
+            errors++;
+        }
+    }
+
+    if (test_area.value.length === sentence.length){
         incrementText();
+        test_area.total_errors += errors; 
     }
 }
 
@@ -137,6 +156,9 @@ duration.addEventListener("change", changeText);
 
 let test_area = document.getElementById("test-area");
 test_area.addEventListener("input", startTimer);
-test_area.addEventListener("input", checkValue);
+
+let characters_typed = 0; 
+test_area.total_errors = 0;
+test_area.addEventListener("input", validateInput);
 
 setText(text_1984[0]);
