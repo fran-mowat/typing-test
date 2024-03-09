@@ -65,6 +65,10 @@ main{
     color: var(--red);
 }
 
+#test-content .current_char{
+    text-decoration: underline;
+}
+
 #test-content textarea{
     height: 100px;
     width: 900px;
