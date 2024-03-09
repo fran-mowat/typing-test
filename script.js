@@ -218,7 +218,7 @@ let resetToStart = () => {
     test_area.value = "";
     test_area.removeAttribute("disabled");
 
-    setText(text_1984[0]);
+    changeText();
 
     let progress_bar = document.getElementById("progress-bar");
     progress_bar.classList = "";
