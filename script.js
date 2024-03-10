@@ -134,9 +134,17 @@ let validateInput = () => {
     const current_input_arr = current_input.split("");
 
     let sentence = text_display.children;
+
+    let current_character = 0;
+    nullFound = false;
+
     for (let i = 0; i < sentence.length; i++){
         if (current_input_arr[i] == null){
             sentence[i].classList = "";
+            if (!nullFound){
+                current_character = i;
+                nullFound = true;
+            }
         } else if (sentence[i].innerHTML == current_input_arr[i]){
             sentence[i].classList = "correct_char";
         } else if (sentence[i].innerHTML != current_input_arr[i]){
@@ -144,6 +152,8 @@ let validateInput = () => {
             test_area.errors++;
         }
     }
+
+    sentence[current_character].classList.add("current_char");
 
     test_area.current_characters = current_input.length;
     test_area.current_words = current_input.split(" ").length - 1;
