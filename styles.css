@@ -53,9 +53,13 @@ main{
     transition: background-position 120s;
 }
 
+#test-content{
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 #test-content #reference-text{
-    padding: 5px;
-    font-size: 18px;
+    padding: 2px 5px;
 }
 
 #test-content .correct_char{
@@ -77,6 +81,9 @@ main{
     border-radius: 5px;
     resize: none;
     overflow: hidden;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 2px 5px;
 }
 
 #test-content textarea:disabled{
