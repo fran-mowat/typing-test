@@ -28,6 +28,10 @@ main{
     padding: 3px 5px;
 }
 
+#test-progress{
+    margin: 5px 0;
+}
+
 #progress-bar{
     display: inline-block;
     width: 70%;
