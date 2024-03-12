@@ -5,6 +5,7 @@
     --green: rgb(39, 137, 39);
     --red: rgb(223, 40, 40);
     --light-grey: #f2f2f2;
+    --dark-blue: #292b3a;
 }
 
 body{
@@ -84,6 +85,17 @@ main{
 
 #display-results{
     display: none;
+    position: fixed;
+    height: 350px;
+    width: 600px;
+    top: 50%;
+    margin-top: -175px;
+    left: 50%;
+    margin-left: -300px;
+    border-radius: 5px;
+    background-color: var(--dark-blue);
+    flex-direction: column;
+    justify-content: center;
 }
 
 #display-results div{
@@ -113,7 +125,7 @@ main{
 
 #display-results input{
     display: block;
-    margin: auto;
+    margin: 10px auto;
     font-size: 19px;
     padding: 10px;
     background-color: var(--light-grey);
