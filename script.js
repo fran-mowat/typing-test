@@ -168,7 +168,7 @@ let validateInput = () => {
 
 let displayResults = () => {
     let result_display = document.getElementById("display-results");
-    result_display.style.display = "block";
+    result_display.style.display = "flex";
 
     let errors = 0;
     let characters = 0; 
