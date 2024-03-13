@@ -46,7 +46,7 @@ main{
 }
 
 #test-progress .progress_30s{
-    background-position: left; 
+    background-position: left;
     transition: background-position 30s;
 }
 
@@ -138,12 +138,16 @@ main{
     border: 1px solid var(--grey);
 }
 
-#results-container #display-results #comparison p{
+#results-container #display-results #comparison div{
     font-size: 18px;
     margin: 15px;
 }
 
-#results-container #display-results #comparison span{
+#results-container #display-results #comparison p{
+    margin: 5px 0;
+}
+
+#results-container #display-results #comparison p:first-of-type{
     font-weight: 700;
     font-size: 20px;
 }
@@ -171,7 +175,7 @@ main{
 
 #results-container #display-results #stats div p{
     font-size: 18px;
-    margin: 5px auto;
+    margin: 3px auto;
 }
 
 #results-container #display-results #stats div p:nth-of-type(2){
