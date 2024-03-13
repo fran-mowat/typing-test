@@ -180,7 +180,11 @@ let setAnimal = (level, animal, message) => {
     animal_img.alt = animal + " icon";
     let span = document.createElement("span");
     span.innerHTML = animal; 
-    animal_txt.innerHTML = "You're a ";
+    if (animal == "elephant"){
+        animal_txt.innerHTML = "You're an ";
+    } else {
+        animal_txt.innerHTML = "You're a ";
+    }
     animal_txt.appendChild(span);
     animal_txt.innerHTML = animal_txt.innerHTML + "! " + message;
 }
