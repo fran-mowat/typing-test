@@ -35,14 +35,18 @@ let countdown = () => {
         test_area.setAttribute("disabled", "true");
         displayResults();
     } else {
-        let seconds_passed = Math.floor((difference % (1000 * 60 * 60)) / (1000));
-        let seconds_remaining = duration.value - seconds_passed;
+        let seconds_passed = (difference % (1000 * 60 * 60)) / (1000);
+        let seconds_remaining = duration.value - Math.floor(seconds_passed);
 
         let duration_remaining = secondsToMinutes(seconds_remaining);
         let clock_minutes = duration_remaining[0];
         let clock_seconds = duration_remaining[1];
 
         clock.innerHTML = `0${clock_minutes}:${clock_seconds}`;
+
+        let progress_filled = document.getElementById("progress-fill");
+        let percentage = seconds_passed / duration.value * 100;
+        progress_filled.style.width = percentage + "%";
     }
 }
 
@@ -109,23 +113,8 @@ let startTimer = () => {
     test_area.removeEventListener("input", startTimer);
 
     clearInterval(clock.interval_ID);
-    let interval_ID = setInterval(countdown, 100);
+    let interval_ID = setInterval(countdown, 10);
     clock.interval_ID = interval_ID;
-
-    let progress_bar = document.getElementById("progress-bar");
-    switch (duration.value){
-        case "30":
-            progress_bar.classList = "progress_30s";
-            break;
-        case "60":
-            progress_bar.classList = "progress_60s";
-            break;
-        case "120":
-            progress_bar.classList = "progress_120s";
-            break;
-        default:
-            console.log("Error setting class of progress bar");
-    }
 }
 
 let validateInput = () => {
