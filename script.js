@@ -190,8 +190,8 @@ let setAnimal = (level, animal, message) => {
 }
 
 let displayResults = () => {
-    let result_display = document.getElementById("display-results");
-    result_display.style.display = "flex";
+    let result_display = document.getElementById("results-container");
+    result_display.style.display = "block";
 
     let errors = 0;
     let characters = 0; 
@@ -267,7 +267,7 @@ test_area.total_words = 0;
 test_area.addEventListener("input", validateInput);
 
 let resetToStart = () => {
-    let result_display = document.getElementById("display-results");
+    let result_display = document.getElementById("results-container");
     result_display.style.display = "none";
 
     test_area.value = "";
