@@ -172,21 +172,19 @@ let validateInput = () => {
 
 let setAnimal = (level, animal, message) => {
     let comparison = document.getElementById("comparison");
-    let animal_txt = comparison.children[0];
+    let animal_txt = comparison.children[0].children[0];
+    let typing_message = comparison.children[0].children[1];
     let animal_img = comparison.children[1];
 
     animal_img.src = "./static/s1-cheetah.svg";
     animal_img.src = "./static/" + level + animal + ".svg";
-    animal_img.alt = animal + " icon";
-    let span = document.createElement("span");
-    span.innerHTML = animal; 
+    animal_img.alt = animal + " icon"; 
     if (animal == "elephant"){
-        animal_txt.innerHTML = "You're an ";
+        animal_txt.innerHTML = "You're an elephant!";
     } else {
-        animal_txt.innerHTML = "You're a ";
+        animal_txt.innerHTML = "You're a " + animal + "!";
     }
-    animal_txt.appendChild(span);
-    animal_txt.innerHTML = animal_txt.innerHTML + "! " + message;
+    typing_message.innerHTML = message;
 }
 
 let displayResults = () => {
@@ -231,19 +229,19 @@ let displayResults = () => {
     let animal_img = comparison.children[1];
 
     if (wpm >= 70){
-        setAnimal("s1-", "cheetah", "You are in the top 10% of typists.");
+        setAnimal("s1-", "cheetah", "You are in the top 10% of typists. Well done.");
     } else if (wpm >= 60){
-        setAnimal("s2-", "kangaroo", "Wow. Impressive.");    
+        setAnimal("s2-", "kangaroo", "Wow, you are very fast at typing.");    
     } else if (wpm >= 50){
-        setAnimal("s3-", "fish", "You are faster than most other typists - well done.");
+        setAnimal("s3-", "fish", "You are faster than most other typists. Well done.");
     } else if (wpm >= 45){
-        setAnimal("s4-", "dolphin", "You are slightly faster than average - great job.");
+        setAnimal("s4-", "dolphin", "You are slightly faster than average. Great job.");
     } else if (wpm >= 40){
-        setAnimal("s5-", "elephant", "You are slightly below the average typing speed - keep practicing.");
+        setAnimal("s5-", "elephant", "You are slightly below the average typing speed. Keep practicing.");
     } else if (wpm >= 35){
-        setAnimal("s6-", "hen", "You've still got some work to do - keep practicing.");
+        setAnimal("s6-", "hen", "You've still got some work to do. Keep practicing to improve your score.");
     } else if (wpm >= 20){
-        setAnimal("s7-", "penguin", "Keep practicing your typing.");
+        setAnimal("s7-", "penguin", "You've still got work to do. Keep practicing your typing.");
     } else {
         setAnimal("s8-", "snail", "You're in the slowest group of typists. Keep practicing to improve.");
     }
