@@ -166,6 +166,21 @@ let validateInput = () => {
     }
 }
 
+let setAnimal = (level, animal, message) => {
+    let comparison = document.getElementById("comparison");
+    let animal_txt = comparison.children[0];
+    let animal_img = comparison.children[1];
+
+    animal_img.src = "./static/s1-cheetah.svg";
+    animal_img.src = "./static/" + level + animal + ".svg";
+    animal_img.alt = animal + " icon";
+    let span = document.createElement("span");
+    span.innerHTML = animal; 
+    animal_txt.innerHTML = "You're a ";
+    animal_txt.appendChild(span);
+    animal_txt.innerHTML = animal_txt.innerHTML + "! " + message;
+}
+
 let displayResults = () => {
     let result_display = document.getElementById("display-results");
     result_display.style.display = "flex";
@@ -204,31 +219,25 @@ let displayResults = () => {
     cpm_display.innerHTML = cpm;
 
     let comparison = document.getElementById("comparison");
+    let animal = comparison.children[0];
     let animal_img = comparison.children[1];
-    if (wpm > 70){
-        animal_img.src = "./static/s1-cheetah.svg";
-        animal_img.alt = "cheetah icon";
-    } else if (wpm > 60){
-        animal_img.src = "./static/s2-kangaroo.svg";
-        animal_img.alt = "kangaroo icon";
-    } else if (wpm > 50){
-        animal_img.src = "./static/s3-fish.svg";
-        animal_img.alt = "fish icon";
-    } else if (wpm > 45){
-        animal_img.src = "./static/s4-dolphin.svg";
-        animal_img.alt = "dolphin icon";
-    } else if (wpm > 40){
-        animal_img.src = "./static/s5-elephant.svg";
-        animal_img.alt = "elephant icon";
-    } else if (wpm > 35){
-        animal_img.src = "./static/s6-hen.svg";
-        animal_img.alt = "hen icon";
-    } else if (wpm > 20){
-        animal_img.src = "./static/s7-penguin.svg";
-        animal_img.alt = "penguin icon";
+
+    if (wpm >= 70){
+        setAnimal("s1-", "cheetah", "You are in the top 10% of typists.");
+    } else if (wpm >= 60){
+        setAnimal("s2-", "kangaroo", "Wow. Impressive.");    
+    } else if (wpm >= 50){
+        setAnimal("s3-", "fish", "You are faster than most other typists - well done.");
+    } else if (wpm >= 45){
+        setAnimal("s4-", "dolphin", "You are slightly faster than average - great job.");
+    } else if (wpm >= 40){
+        setAnimal("s5-", "elephant", "You are slightly below the average typing speed - keep practicing.");
+    } else if (wpm >= 35){
+        setAnimal("s6-", "hen", "You've still got some work to do - keep practicing.");
+    } else if (wpm >= 20){
+        setAnimal("s7-", "pengiun", "Keep practicing your typing.");
     } else {
-        animal_img.src = "./static/s8-snail.svg";
-        animal_img.alt = "snail icon";
+        setAnimal("s8-", "snail", "You're in the slowest group of typists. Keep practicing to improve.");
     }
 }
 
