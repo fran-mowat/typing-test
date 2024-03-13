@@ -202,6 +202,34 @@ let displayResults = () => {
     let cpm_display = cpm_div.children[1];
     let cpm = Math.floor(characters / minutes); 
     cpm_display.innerHTML = cpm;
+
+    let comparison = document.getElementById("comparison");
+    let animal_img = comparison.children[1];
+    if (wpm > 70){
+        animal_img.src = "./static/s1-cheetah.svg";
+        animal_img.alt = "cheetah icon";
+    } else if (wpm > 60){
+        animal_img.src = "./static/s2-kangaroo.svg";
+        animal_img.alt = "kangaroo icon";
+    } else if (wpm > 50){
+        animal_img.src = "./static/s3-fish.svg";
+        animal_img.alt = "fish icon";
+    } else if (wpm > 45){
+        animal_img.src = "./static/s4-dolphin.svg";
+        animal_img.alt = "dolphin icon";
+    } else if (wpm > 40){
+        animal_img.src = "./static/s5-elephant.svg";
+        animal_img.alt = "elephant icon";
+    } else if (wpm > 35){
+        animal_img.src = "./static/s6-hen.svg";
+        animal_img.alt = "hen icon";
+    } else if (wpm > 20){
+        animal_img.src = "./static/s7-penguin.svg";
+        animal_img.alt = "penguin icon";
+    } else {
+        animal_img.src = "./static/s8-snail.svg";
+        animal_img.alt = "snail icon";
+    }
 }
 
 let selected_text = document.getElementById("text-choice");
