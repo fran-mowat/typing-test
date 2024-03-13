@@ -74,13 +74,17 @@ main{
     color: var(--red);
 }
 
+#test-content .incorrect_space{
+    background-color: var(--red);
+}
+
 #test-content .current_char{
     text-decoration: underline;
 }
 
 #test-content textarea{
     height: 100px;
-    width: 900px;
+    width: 890px;
     border: 1px solid black;
     border-radius: 5px;
     resize: none;
