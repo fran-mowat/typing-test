@@ -243,7 +243,7 @@ let displayResults = () => {
     } else if (wpm >= 35){
         setAnimal("s6-", "hen", "You've still got some work to do - keep practicing.");
     } else if (wpm >= 20){
-        setAnimal("s7-", "pengiun", "Keep practicing your typing.");
+        setAnimal("s7-", "penguin", "Keep practicing your typing.");
     } else {
         setAnimal("s8-", "snail", "You're in the slowest group of typists. Keep practicing to improve.");
     }
