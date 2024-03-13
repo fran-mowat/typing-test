@@ -83,6 +83,8 @@ main{
 
 #test-content .current_char{
     text-decoration: underline;
+    text-decoration-color: var(--highlight);
+    text-decoration-thickness: 2px;
 }
 
 #test-content textarea{
