@@ -16,6 +16,7 @@ body{
 
 header h1{
     text-align: center;
+    color: var(--dark-blue);
 }
 
 main{
