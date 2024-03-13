@@ -95,7 +95,7 @@ main{
 }
 
 #display-results{
-    display: flex;
+    display: none;
     position: fixed;
     height: 450px;
     width: 700px;
@@ -127,6 +127,12 @@ main{
 #display-results #comparison span{
     font-weight: 700;
     font-size: 20px;
+}
+
+#display-results #comparison img{
+    height: 200px;
+    display: block;
+    margin: 20px auto;
 }
 
 #display-results #stats{
@@ -165,4 +171,9 @@ main{
 
 #display-results #stats input:hover{
     background-color: #e6e6e6;
+}
+
+img{
+    height: 100px;
+    display: inline-block;
 }
