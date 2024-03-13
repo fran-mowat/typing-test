@@ -102,9 +102,19 @@ main{
     background-color: var(--light-grey);
 }
 
-#display-results{
-    display: none;
+#results-container{
     position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0; 
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#results-container #display-results{
+    position: fixed;
+    display: flex;
     height: 450px;
     width: 700px;
     top: 50%;
@@ -117,38 +127,38 @@ main{
     justify-content: center;
 }
 
-#display-results div{
+#results-container #display-results div{
     margin: 40px;
 }
 
-#display-results #comparison{
+#results-container #display-results #comparison{
     background-color: var(--highlight);
     border-radius: 5px;
     width: 300px;
     border: 1px solid var(--grey);
 }
 
-#display-results #comparison p{
+#results-container #display-results #comparison p{
     font-size: 18px;
     margin: 15px;
 }
 
-#display-results #comparison span{
+#results-container #display-results #comparison span{
     font-weight: 700;
     font-size: 20px;
 }
 
-#display-results #comparison img{
+#results-container #display-results #comparison img{
     height: 200px;
     display: block;
     margin: 20px auto;
 }
 
-#display-results #stats{
+#results-container #display-results #stats{
     margin-left: 0;
 }
 
-#display-results #stats div{
+#results-container #display-results #stats div{
     height: 70px;
     width: 270px;
     border-radius: 5px;
@@ -159,16 +169,16 @@ main{
     border: 1px solid var(--grey);
 }
 
-#display-results #stats div p{
+#results-container #display-results #stats div p{
     font-size: 18px;
     margin: 5px auto;
 }
 
-#display-results #stats div p:nth-of-type(2){
+#results-container #display-results #stats div p:nth-of-type(2){
     font-size: 28px;
 }
 
-#display-results #stats input{
+#results-container #display-results #stats input{
     display: block;
     margin: 0 auto;
     font-size: 19px;
@@ -178,7 +188,7 @@ main{
     border: 1px solid var(--grey);
 }
 
-#display-results #stats input:hover{
+#results-container #display-results #stats input:hover{
     background-color: #d9d9d9;
 }
 
