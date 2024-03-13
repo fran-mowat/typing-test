@@ -148,7 +148,11 @@ let validateInput = () => {
         } else if (sentence[i].innerHTML == current_input_arr[i]){
             sentence[i].classList = "correct_char";
         } else if (sentence[i].innerHTML != current_input_arr[i]){
-            sentence[i].classList = "incorrect_char";
+            if (sentence[i].innerHTML == " "){
+                sentence[i].classList = "incorrect_space";
+            } else {
+                sentence[i].classList = "incorrect_char";
+            }
             test_area.errors++;
         }
     }
