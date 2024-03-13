@@ -76,7 +76,7 @@ main{
 }
 
 #test-content .incorrect_space{
-    background-color: var(--red);
+    background-image: linear-gradient(90deg, transparent 0%, transparent 20%, var(--red) 20%, var(--red) 80%, transparent 80%, transparent 100%);
 }
 
 #test-content .current_char{
