@@ -186,6 +186,7 @@ main{
     display: block;
     margin: 0 auto;
     font-size: 19px;
+    font-family: inherit;
     padding: 10px;
     background-color: var(--light-grey);
     border-radius: 5px;
