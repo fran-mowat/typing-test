@@ -80,10 +80,12 @@ let changeText = () => {
     }
 
     test_area.value = "";
+    test_area.placeholder = "Start typing here to begin...";
 }
 
 let incrementText = () => {
     text_display.text_index++;
+    test_area.placeholder = "Continue typing here...";
 
     switch (selected_text.value){
         case "1":
@@ -270,6 +272,7 @@ let resetToStart = () => {
 
     test_area.value = "";
     test_area.removeAttribute("disabled");
+    test_area.placeholder = "Start typing here to begin...";
 
     changeText();
 
