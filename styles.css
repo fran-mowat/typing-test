@@ -45,19 +45,11 @@ main{
     background-image: linear-gradient(90deg, var(--highlight) 0%, var(--highlight) 50%, var(--grey) 50%, var(--grey) 100%);
 }
 
-#test-progress .progress_30s{
-    background-position: left;
-    transition: background-position 30s;
-}
-
-#test-progress .progress_60s{
-    background-position: left;
-    transition: background-position 60s;
-}
-
-#test-progress .progress_120s{
-    background-position: left;
-    transition: background-position 120s;
+#progress-bar #progress-fill{
+    background-color: var(--highlight);
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
 }
 
 #test-content{
