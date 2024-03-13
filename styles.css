@@ -95,48 +95,67 @@ main{
 }
 
 #display-results{
-    display: none;
+    display: flex;
     position: fixed;
-    height: 350px;
-    width: 600px;
+    height: 450px;
+    width: 700px;
     top: 50%;
-    margin-top: -175px;
+    margin-top: -225px;
     left: 50%;
-    margin-left: -300px;
+    margin-left: -350px;
     border-radius: 5px;
     background-color: var(--dark-blue);
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
 #display-results div{
-    margin: 10px auto;
-    width: max-content;
+    margin: 40px;
 }
 
-#display-results div div{
-    height: 100px; 
-    width: 130px;
+#display-results #comparison{
+    background-color: var(--highlight);
+    border-radius: 5px;
+    width: 300px;
+}
+
+#display-results #comparison p{
+    font-size: 18px;
+    margin: 15px;
+}
+
+#display-results #comparison span{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#display-results #stats{
+    margin-left: 0;
+}
+
+#display-results #stats div{
+    height: 70px;
+    width: 270px;
     border-radius: 5px;
     border: 1px solid black;
     background-color: var(--highlight);
     text-align: center;
-    display: inline-block;
-    margin: 5px 15px;
+    margin: 0 0 20px 0;
+    padding: 10px;
 }
 
-#display-results div div p{
+#display-results #stats div p{
     font-size: 18px;
-    margin: 10px auto;
+    margin: 5px auto;
 }
 
-#display-results div div p:nth-of-type(2){
+#display-results #stats div p:nth-of-type(2){
     font-size: 28px;
 }
 
-#display-results input{
+#display-results #stats input{
     display: block;
-    margin: 10px auto;
+    margin: 0 auto;
     font-size: 19px;
     padding: 10px;
     background-color: var(--light-grey);
@@ -144,8 +163,6 @@ main{
     border: 1px solid black;
 }
 
-#display-results input:hover{
+#display-results #stats input:hover{
     background-color: #e6e6e6;
-    transform: translateY(-1px);
-    box-shadow: 5px 5px 3px var(--grey);
 }
