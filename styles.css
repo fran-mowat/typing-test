@@ -9,7 +9,7 @@
 }
 
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: monospace, 'Courier New', Courier;
     background-color: var(--primary-colour);
     margin: 30px;
     color: var(--dark-blue);
@@ -17,6 +17,7 @@ body{
 
 header h1{
     text-align: center;
+    margin: 40px auto;
 }
 
 main{
@@ -29,6 +30,7 @@ main{
     padding: 3px 5px;
     color: inherit;
     border: 1px solid var(--grey);
+    font-family: monospace, 'Courier New', Courier;
 }
 
 #test-progress{
@@ -54,11 +56,10 @@ main{
 
 #test-content{
     font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 #test-content #reference-text{
-    padding: 2px 5px;
+    padding: 5px;
 }
 
 #test-content .correct_char{
@@ -88,7 +89,7 @@ main{
     overflow: hidden;
     font-size: inherit;
     font-family: inherit;
-    padding: 2px 5px;
+    padding: 5px;
     color: inherit;
 }
 
