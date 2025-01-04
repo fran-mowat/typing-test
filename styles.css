@@ -117,22 +117,22 @@ main{
     width: 100%;
     top: 0; 
     left: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #1d1d1d44;
 }
 
 #results-container #display-results{
     position: fixed;
     display: flex;
     height: 450px;
-    width: 700px;
+    width: min(94%, 700px);
     top: 50%;
-    margin-top: -225px;
     left: 50%;
-    margin-left: -350px;
+    transform: translate(-50%, -50%);
     border-radius: 5px;
     background-color: var(--dark-blue);
     flex-direction: row;
     justify-content: center;
+    box-shadow: 5px 5px 10px #555;
 }
 
 #results-container #display-results div{
@@ -144,6 +144,13 @@ main{
     border-radius: 5px;
     width: 300px;
     border: 1px solid var(--grey);
+    display: none;
+}
+
+@media (min-width: 768px) {
+    #results-container #display-results #comparison{
+        display: block;
+    }
 }
 
 #results-container #display-results #comparison div{
@@ -167,7 +174,13 @@ main{
 }
 
 #results-container #display-results #stats{
-    margin-left: 0;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    #results-container #display-results #stats{
+        margin-left: 0;
+    }
 }
 
 #results-container #display-results #stats div{
