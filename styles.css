@@ -11,8 +11,14 @@
 body{
     font-family: monospace, 'Courier New', Courier;
     background-color: var(--primary-colour);
-    margin: 30px;
+    margin: 15px;
     color: var(--dark-blue);
+}
+
+@media (min-width: 768px) {
+    body{
+        margin: 30px;
+    }    
 }
 
 header h1{
@@ -22,7 +28,7 @@ header h1{
 
 main{
     margin: auto;
-    width: 900px;
+    width: 90%;
 }
 
 #test-details form select{
@@ -39,7 +45,7 @@ main{
 
 #progress-bar{
     display: inline-block;
-    width: 70%;
+    width: calc(100% - 55px);
     height: 10px;
     border-radius: 3px;
     background-position: right;
@@ -81,9 +87,10 @@ main{
 }
 
 #test-content textarea{
-    height: 100px;
-    width: 890px;
+    height: 200px;
+    width: 100%;
     border: 1px solid var(--grey);
+    box-sizing: border-box;
     border-radius: 5px;
     resize: none;
     overflow: hidden;
@@ -95,6 +102,12 @@ main{
 
 #test-content textarea:disabled{
     background-color: var(--light-grey);
+}
+
+@media (min-width: 768px) {
+    #test-content textarea{
+        height: 100px;
+    }
 }
 
 #results-container{
